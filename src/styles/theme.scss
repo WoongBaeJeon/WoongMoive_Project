@@ -1,0 +1,21 @@
+@mixin theme-light {
+  background-color: #00bcd4; //00bcd4
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  color: #00bcd4;
+  button {
+    background: #00bcd4;
+    color: #222;
+    border: 1px solid #00bcd4;
+  }
+}
+
+@mixin theme-dark {
+  background-color: #222;
+  background: #222;
+  color: #00bcd4;
+  button {
+    background: #333;
+    color: #00bcd4;
+    border: 1px solid #555;
+  }
+}

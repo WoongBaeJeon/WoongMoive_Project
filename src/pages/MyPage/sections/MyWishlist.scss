@@ -1,0 +1,19 @@
+.section-box {
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #00bcd4;
+  }
+
+  &.light {
+    @include theme-light;
+  }
+
+  &.dark {
+    @include theme-dark;
+  }
+}

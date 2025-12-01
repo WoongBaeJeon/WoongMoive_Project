@@ -1,0 +1,62 @@
+.login-container {
+  max-width: 400px;
+  min-width: 200px;
+  margin: 6rem auto;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  .login-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: black;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth-error {
+    color: #ff4d4f;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .oauth-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 0.9rem;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ddd;
+    }
+
+    span {
+      padding: 0 10px;
+      font-weight: 500;
+    }
+  }
+}

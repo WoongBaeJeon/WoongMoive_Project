@@ -1,0 +1,12 @@
+.section-box {
+  font-weight: bold;
+
+  &.light {
+    @include theme-light;
+    color: #ffffff;
+  }
+
+  &.dark {
+    @include theme-dark;
+  }
+}

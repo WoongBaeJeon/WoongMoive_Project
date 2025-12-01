@@ -1,0 +1,47 @@
+.sign-container {
+  max-width: 400px;
+  min-width: 200px;
+  margin: 3rem auto 3rem auto;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  .sign-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: black;
+  }
+
+  .sign-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-btn {
+    width: 100%;
+    max-width: 25rem;
+    background-color: #00bcd4;
+    color: #ffffff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #017180;
+      transition: background-color 0.3s;
+    }
+  }
+
+  &.dark {
+    @include theme-dark;
+  }
+
+  &.light {
+    @include theme-light;
+  }
+}

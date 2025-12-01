@@ -1,0 +1,98 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+  .logo {
+    //460px 보다 작아지면 영화임티로 변경
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00bcd4;
+    cursor: pointer;
+
+    &:hover {
+      color: #80deea;
+      transform: scale(1.05);
+    }
+  }
+
+  input {
+    width: 300px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #1b2a33;
+    color: #ffffff;
+
+    &:focus {
+      background-color: #253743;
+      box-shadow: 0 0 5px #00bcd4;
+    }
+  }
+
+  .loginBtn {
+    display: flex;
+    gap: 10px;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 90px;
+    // background: #00bcd4;
+    // color: black;
+    border-radius: 8px;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fadeIn 0.2s ease;
+    height: 45px; // ⭐ 고정 높이 추가
+    line-height: 20px; // 아이콘·텍스트 모두 수평 정렬됨
+    font-weight: bold;
+  }
+
+  .menuItem {
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      color: #ffffff !important;
+      font-weight: bold;
+    }
+  }
+
+  &.dark {
+    @include theme-dark;
+    .dropdownMenu {
+      background: #333;
+      color: #00bcd4;
+      border: 1px solid #555;
+
+      .menuItem:hover {
+        color: #00bcd4;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &.light {
+    @include theme-light;
+
+    .dropdownMenu {
+      background: #00bcd4;
+      color: black;
+
+      .menuItem:hover {
+        color: #203a43;
+        font-weight: bold;
+      }
+    }
+  }
+  // .hamburgerBtn {
+  //   display: none;
+  // }
+}

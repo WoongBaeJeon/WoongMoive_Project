@@ -1,0 +1,56 @@
+.mypage-sidebar {
+  width: 260px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  border-right: 1px solid #222;
+
+  .user-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .user-avatar img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .user-name {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+
+    li {
+      a {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 40px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #222;
+        color: #ccc;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #1c1c1c;
+          color: #00bcd4;
+        }
+
+        &.active {
+          background-color: #00bcd4;
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

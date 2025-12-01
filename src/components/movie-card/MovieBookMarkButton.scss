@@ -1,0 +1,17 @@
+.bookMark-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bookMark-icons-btn {
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.bookMark-icons-btn:hover {
+  transform: scale(1.1); /* 호버 효과(optional) */
+}

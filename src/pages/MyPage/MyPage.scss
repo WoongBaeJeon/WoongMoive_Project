@@ -1,0 +1,33 @@
+.mypage-wrapper {
+  display: flex;
+  min-height: 80vh;
+  font-weight: bold;
+
+  &.light {
+    @include theme-light;
+  }
+
+  &.dark {
+    @include theme-dark;
+  }
+}
+
+.mypage-content {
+  flex: 1;
+  padding: 50px 60px;
+  background-color: #1b1b1b;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #00bcd4;
+  }
+
+  .section-box {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+}

@@ -1,0 +1,26 @@
+.movieMain-Container {
+  .movieMain-movieText {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .movieMain-movieCard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .addMoiveBtn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 20px 0;
+  }
+
+  &.dark {
+    @include theme-dark;
+  }
+
+  &.light {
+    @include theme-light;
+  }
+}
