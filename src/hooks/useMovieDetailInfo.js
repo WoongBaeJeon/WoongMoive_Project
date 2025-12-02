@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { API_URL, API_KEY } from "@constants/api.js";
+import { API_KEY, API_URL } from '@constants/api.js';
+import { useEffect, useState } from 'react';
 
 export default function useMovieDetailInfo(movieId) {
   const [movieDetailInfo, setMovieDetailInfo] = useState(null); //movieListDatas.results
@@ -17,12 +17,12 @@ export default function useMovieDetailInfo(movieId) {
         const jsonData = await response.json();
 
         if (!jsonData || jsonData.success === false) {
-          throw new Error("영화 데이터를 불러올 수 없습니다.");
+          throw new Error('영화 데이터를 불러올 수 없습니다.');
         }
 
         setMovieDetailInfo(jsonData);
       } catch (error) {
-        console.error("API 요청 에러 : ", error);
+        console.error('API 요청 에러 : ', error);
       } finally {
         setLoading(false);
       }

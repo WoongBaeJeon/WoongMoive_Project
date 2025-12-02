@@ -1,22 +1,22 @@
-import "./styles/index.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
-import { store } from "@store/index.js";
-import { Provider } from "react-redux";
-import { Layout, LoadingSkeleton } from "@components";
-import { SupabaseProvider } from "@supabase_path";
+import { Layout, LoadingSkeleton } from '@components';
 import {
-  MovieMain,
-  LoginPage,
-  SignUpPage,
   AuthCallback,
-  MyPage,
+  LoginPage,
+  MovieMain,
   MyInfo,
+  MyPage,
   MyWishlist,
+  SignUpPage,
   Support,
-} from "@pages";
+} from '@pages';
+import { store } from '@store/index.js';
+import { SupabaseProvider } from '@supabase_path';
+import { lazy, Suspense } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './styles/index.scss';
 
-const MovieDetail = lazy(() => import("@pages/MovieDetail.jsx"));
+const MovieDetail = lazy(() => import('@pages/MovieDetail.jsx'));
 
 //라우팅 역할을 하는 App
 export default function App() {

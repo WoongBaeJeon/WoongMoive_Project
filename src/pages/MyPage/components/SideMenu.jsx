@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import "./SideMenu.scss";
+import { NavLink } from 'react-router-dom';
+import './SideMenu.scss';
 
 export default function SideMenu({ userInfo }) {
   return (

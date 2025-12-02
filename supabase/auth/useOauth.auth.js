@@ -1,4 +1,4 @@
-import { useSupabase } from "@supabase_path/utilities";
+import { useSupabase } from '@supabase_path/utilities';
 export const useOAuth = () => {
   const supabase = useSupabase();
   // 카카오 로그인
@@ -6,7 +6,7 @@ export const useOAuth = () => {
     //redirectTo = null, ...otherOptions
     try {
       await supabase.auth.signInWithOAuth({
-        provider: "kakao",
+        provider: 'kakao',
         options: {
           redirectTo: `${window.location.origin}/auth/callback`,
           // ...otherOptions,
@@ -21,7 +21,7 @@ export const useOAuth = () => {
   const loginWithGoogle = async () => {
     try {
       await supabase.auth.signInWithOAuth({
-        provider: "google",
+        provider: 'google',
         options: {
           redirectTo: `${window.location.origin}/auth/callback`,
           // ...otherOptions,

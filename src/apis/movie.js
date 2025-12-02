@@ -1,5 +1,5 @@
 //커스텀 진행 예정
-import fetcher from "@lib/fetcher";
+import fetcher from '@lib/fetcher';
 
 const movieApi = {
   getPopularMovies: async () => {

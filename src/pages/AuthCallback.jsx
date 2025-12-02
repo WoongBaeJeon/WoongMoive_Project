@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useSupabase } from "@supabase_path";
-import { useEffect } from "react";
-import { logInState, setUserName, setUserId } from "@store/slice";
-import { localStorageUtils, USER_INFO_KEY } from "@supabase_path/utilities";
-import { toast } from "react-toastify";
+import { logInState, setUserId, setUserName } from '@store/slice';
+import { useSupabase } from '@supabase_path';
+import { localStorageUtils, USER_INFO_KEY } from '@supabase_path/utilities';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function AuthCallback() {
   const navigate = useNavigate();
@@ -19,16 +19,16 @@ export default function AuthCallback() {
         const { data, error } = await supabase.auth.getSession();
 
         if (error) {
-          console.error("세션 불러오기 오류:", error);
-          navigate("/login");
+          console.error('세션 불러오기 오류:', error);
+          navigate('/login');
           return;
         }
 
         // 2) 세션이 있으면 로그인 완료된 것
         if (data.session?.user) {
           const sessionUser = data.session.user;
-          const userName = sessionUser.user_metadata?.name || "";
-          const userId = sessionUser.id || "";
+          const userName = sessionUser.user_metadata?.name || '';
+          const userId = sessionUser.id || '';
 
           // 3) 로컬 스토리지 및 Redux 상태 업데이트
           setItemToLocalStorage(USER_INFO_KEY.customKey, sessionUser);
@@ -36,16 +36,16 @@ export default function AuthCallback() {
           dispatch(setUserName(userName)); //userName 추가 전역관리
           dispatch(setUserId(userId));
           toast.success(`${userName}님 환영합니다!`);
-          navigate("/");
+          navigate('/');
         } else {
           // 세션 없음 → 로그인 실패
           toast.error(`로그인 실패`);
-          navigate("/login");
+          navigate('/login');
         }
       } catch (error) {
-        console.error("OAuth 처리 실패 : ", error);
-        toast.error("로그인 중 오류가 발생하였습니다.");
-        navigate("/login");
+        console.error('OAuth 처리 실패 : ', error);
+        toast.error('로그인 중 오류가 발생하였습니다.');
+        navigate('/login');
       }
     };
 
@@ -53,7 +53,7 @@ export default function AuthCallback() {
   }, [navigate, dispatch, supabase]);
 
   return (
-    <div style={{ padding: "20px", textAlign: "center", color: "#00bcd4" }}>
+    <div style={{ padding: '20px', textAlign: 'center', color: '#00bcd4' }}>
       <h2>로그인 처리 중...</h2>
     </div>
   );

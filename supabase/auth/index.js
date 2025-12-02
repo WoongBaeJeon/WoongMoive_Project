@@ -1,6 +1,6 @@
-import { useAuth } from "./useAuth";
-import { useEmailAuth } from "./useEmail.auth";
-import { useOAuth } from "./useOauth.auth";
+import { useAuth } from './useAuth';
+import { useEmailAuth } from './useEmail.auth';
+import { useOAuth } from './useOauth.auth';
 
 export const useSupabaseAuth = () => {
   const { getUserInfo, logout } = useAuth();

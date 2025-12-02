@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const useAuthGuard = () => {
   const isLogIn = useSelector((state) => state.logIn.isLogIn);
@@ -9,8 +9,8 @@ export const useAuthGuard = () => {
 
   useEffect(() => {
     if (!isLogIn) {
-      toast.warn("로그인이 필요합니다.");
-      navigate("/login");
+      toast.warn('로그인이 필요합니다.');
+      navigate('/login');
     }
   }, [isLogIn, navigate]);
 };

@@ -1,10 +1,10 @@
-import { useAuthGuard } from "@hooks/useAuthGuard";
-import SideMenu from "./components/SideMenu";
-import { Outlet } from "react-router-dom";
-import { useUserInfo } from "@hooks";
-import { LoadingSkeleton } from "@components";
-import { useSelector } from "react-redux";
-import "./MyPage.scss";
+import { LoadingSkeleton } from '@components';
+import { useUserInfo } from '@hooks';
+import { useAuthGuard } from '@hooks/useAuthGuard';
+import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
+import SideMenu from './components/SideMenu';
+import './MyPage.scss';
 
 export default function MyPage() {
   const isDarkMode = useSelector((state) => state.themeToggle.isDarkMode);
@@ -24,7 +24,7 @@ export default function MyPage() {
     );
 
   return (
-    <div className={`mypage-wrapper ${isDarkMode ? "dark" : "light"}`}>
+    <div className={`mypage-wrapper ${isDarkMode ? 'dark' : 'light'}`}>
       <SideMenu userInfo={userInfo} />
       <main className="mypage-content">
         <Outlet context={{ userInfo }} />

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { supabaseClient } from "@supabase_path/utilities";
+import { supabaseClient } from '@supabase_path/utilities';
+import { useEffect, useState } from 'react';
 
 export function useMovieBookMark(userId, movieInfo, refetch) {
   const [isBookMarked, setIsBookMarked] = useState(false);
@@ -12,14 +12,14 @@ export function useMovieBookMark(userId, movieInfo, refetch) {
     const fetchData = async () => {
       try {
         const { data, error } = await supabaseClient
-          .from("bookmarks")
-          .select("*")
-          .eq("user_id", userId)
-          .eq("movie_id", movieInfo.id)
+          .from('bookmarks')
+          .select('*')
+          .eq('user_id', userId)
+          .eq('movie_id', movieInfo.id)
           .maybeSingle();
 
         if (error) {
-          console.error("테이블 조회 에러:", error.message);
+          console.error('테이블 조회 에러:', error.message);
           throw error;
         }
 
@@ -31,7 +31,7 @@ export function useMovieBookMark(userId, movieInfo, refetch) {
           setBookMarkId(null);
         }
       } catch (error) {
-        console.error("북마크 데이터 가져오기 실패:", error);
+        console.error('북마크 데이터 가져오기 실패:', error);
         setIsBookMarked(false);
         setBookMarkId(null);
       }
@@ -42,7 +42,7 @@ export function useMovieBookMark(userId, movieInfo, refetch) {
   // 추가
   const addBookmark = async () => {
     const { data, error } = await supabaseClient
-      .from("bookmarks")
+      .from('bookmarks')
       .insert({
         user_id: userId,
         movie_id: movieInfo.id,
@@ -54,7 +54,7 @@ export function useMovieBookMark(userId, movieInfo, refetch) {
       .select();
 
     if (error) {
-      console.error("Insert error:", error);
+      console.error('Insert error:', error);
       return;
     }
 
@@ -64,16 +64,15 @@ export function useMovieBookMark(userId, movieInfo, refetch) {
 
   // 삭제
   const removeBookmark = async () => {
-    console.log("Removing bookmark with ID:", movieInfo.id, userId);
+    console.log('Removing bookmark with ID:', movieInfo.id, userId);
     const { error } = await supabaseClient
-      .from("bookmarks")
+      .from('bookmarks')
       .delete()
-      .eq("user_id", userId)
-      .eq("movie_id", movieInfo.id);
-    // .eq("id", bookMarkId);
+      .eq('user_id', userId)
+      .eq('movie_id', movieInfo.id);
 
     if (error) {
-      console.error("Delete error:", error);
+      console.error('Delete error:', error);
       return;
     }
 

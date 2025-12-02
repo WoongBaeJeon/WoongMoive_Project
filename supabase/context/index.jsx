@@ -1,5 +1,5 @@
-import { supabaseClient } from "../utilities/supabaseClient";
-import SupabaseContext from "../utilities/supabaseContext";
+import { supabaseClient } from '../utilities/supabaseClient';
+import SupabaseContext from '../utilities/supabaseContext';
 
 export const SupabaseProvider = ({ children }) => {
   return (

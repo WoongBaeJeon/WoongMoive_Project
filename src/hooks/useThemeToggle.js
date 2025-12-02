@@ -1,6 +1,6 @@
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { themeToggleState } from "@store/slice";
+import { themeToggleState } from '@store/slice';
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const useThemeToggle = () => {
   const dispatch = useDispatch();

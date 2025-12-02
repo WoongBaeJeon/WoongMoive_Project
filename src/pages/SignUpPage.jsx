@@ -1,17 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import { CommonButton, InputField } from "@components";
-import { signUpInputFields } from "@constants/signUpInputFields.js";
-import { useForm, useSignUp } from "@/hooks";
-import "./SignUpPage.scss";
+import { useForm, useSignUp } from '@/hooks';
+import { CommonButton, InputField } from '@components';
+import { signUpInputFields } from '@constants/signUpInputFields.js';
+import { useNavigate } from 'react-router-dom';
+import './SignUpPage.scss';
 
 export default function SignUpPage() {
   const navigate = useNavigate();
   const { handleSignUp, errors, loading } = useSignUp();
   const { form, handleChange } = useForm({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
 
   async function handleSubmit(e) {
@@ -39,9 +39,9 @@ export default function SignUpPage() {
         <CommonButton
           type="submit"
           className="signUpPage-btn"
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate('/signup')}
         >
-          {loading ? "가입 중...." : "회원가입"}
+          {loading ? '가입 중....' : '회원가입'}
         </CommonButton>
       </form>
     </div>

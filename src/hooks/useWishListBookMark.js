@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { supabaseClient } from "@supabase_path/utilities";
+import { supabaseClient } from '@supabase_path/utilities';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const useWishListBookMark = (userId) => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -13,10 +13,10 @@ export const useWishListBookMark = (userId) => {
       setLoading(true);
 
       const { data, error } = await supabaseClient
-        .from("bookmarks")
-        .select("*")
-        .eq("user_id", userId)
-        .order("id", { ascending: false });
+        .from('bookmarks')
+        .select('*')
+        .eq('user_id', userId)
+        .order('id', { ascending: false });
 
       if (error) {
         throw error;
@@ -26,7 +26,7 @@ export const useWishListBookMark = (userId) => {
         setBookmarks(data);
       }
     } catch (error) {
-      console.error("위시리스트 에러:", error);
+      console.error('위시리스트 에러:', error);
     } finally {
       if (isMountedRef.current) {
         setLoading(false);

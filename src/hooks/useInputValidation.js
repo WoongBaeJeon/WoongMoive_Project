@@ -1,9 +1,9 @@
 import {
+  validateConfirmPassword,
   validateEmail,
   validateName,
   validatePassword,
-  validateConfirmPassword,
-} from "@utils/Login-SignupValidation";
+} from '@utils/Login-SignupValidation';
 
 export function useInputValidation() {
   function validateLoginForm({ email, password }) {
@@ -20,12 +20,12 @@ export function useInputValidation() {
       password: validatePassword(values.password),
       confirmPassword: validateConfirmPassword(
         values.password,
-        values.confirmPassword
+        values.confirmPassword,
       ),
     };
   }
   function isValid(errors) {
-    return Object.values(errors).every((err) => err === "");
+    return Object.values(errors).every((err) => err === '');
   }
 
   return { validateLoginForm, validateSignUp, isValid };

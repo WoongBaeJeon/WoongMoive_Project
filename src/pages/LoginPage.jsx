@@ -1,10 +1,10 @@
-import "./LoginPage.scss";
-import { useNavigate } from "react-router-dom";
-import { CommonButton, OAuthButton, InputField } from "@components";
-import { useOAuth } from "@supabase_path/auth/useOauth.auth";
-import { useLoginController } from "@hooks/useLoginController";
-import kakaoLogo from "@assets/icons/Kakao_icon.png";
-import googleLogo from "@assets/icons/Google_icon.png";
+import googleLogo from '@assets/icons/Google_icon.png';
+import kakaoLogo from '@assets/icons/Kakao_icon.png';
+import { CommonButton, InputField, OAuthButton } from '@components';
+import { useLoginController } from '@hooks/useLoginController';
+import { useOAuth } from '@supabase_path/auth/useOauth.auth';
+import { useNavigate } from 'react-router-dom';
+import './LoginPage.scss';
 
 export default function LoginPage() {
   const { form, errors, authError, loading, handleChange, handleLogin } =
@@ -65,11 +65,11 @@ export default function LoginPage() {
             className="loginPage-btn"
             aria-label="로그인 데이터 보내기"
           >
-            {loading ? "로그인 중..." : "로그인"}
+            {loading ? '로그인 중...' : '로그인'}
           </CommonButton>
           <CommonButton
             className="loginPage-btn"
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate('/signup')}
             type="button"
             aria-label="회원가입 정보 보내기"
           >

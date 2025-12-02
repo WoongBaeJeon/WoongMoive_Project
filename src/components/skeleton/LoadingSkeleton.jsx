@@ -1,4 +1,4 @@
-import "./LoadingSkeleton.scss";
+import './LoadingSkeleton.scss';
 
 export default function LoadingSkeleton(posterHeight, titleWidth, textWidth) {
   return (

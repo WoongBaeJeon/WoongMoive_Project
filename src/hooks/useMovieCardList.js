@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { API_URL, API_KEY } from "@constants/api.js";
-import { useSelector } from "react-redux";
+import { API_KEY, API_URL } from '@constants/api.js';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function useMovieCardList() {
   const [movieList, setMovieList] = useState([]);
@@ -25,19 +25,19 @@ export default function useMovieCardList() {
       const jsonData = await response.json();
       const data = jsonData.results.filter((movie) => movie.adult === false);
 
-      if (typeof jsonData.total_pages === "number") {
+      if (typeof jsonData.total_pages === 'number') {
         setTotalPages(jsonData.total_pages);
       }
 
       setMovieList((prev) => {
         const combined = [...prev, ...data];
         const uniqueMovies = Array.from(
-          new Map(combined.map((m) => [m.id, m])).values()
+          new Map(combined.map((m) => [m.id, m])).values(),
         );
         return uniqueMovies;
       });
     } catch (error) {
-      console.error("API 요청 에러 : ", error);
+      console.error('API 요청 에러 : ', error);
       setError(error);
     } finally {
       setLoading(false);
@@ -60,9 +60,9 @@ export default function useMovieCardList() {
   const filteredMovies = useMemo(
     () =>
       movieList?.filter((movie) =>
-        movie.title.toLowerCase().includes(searchText.toLowerCase())
+        movie.title.toLowerCase().includes(searchText.toLowerCase()),
       ),
-    [movieList, searchText]
+    [movieList, searchText],
   );
 
   return {
