@@ -3,3 +3,8 @@ export { default as MovieDetail } from "./MovieDetail";
 export { default as LoginPage } from "./LoginPage";
 export { default as SignUpPage } from "./SignUpPage";
 export { default as AuthCallback } from "./AuthCallback";
+export { default as MyPage } from "./MyPage/MyPage";
+export { default as MyInfo } from "./MyPage/sections/MyInfo";
+export { default as MyWishlist } from "./MyPage/sections/MyWishlist";
+export { default as Support } from "./MyPage/sections/Support";
+export { default as SideMenu } from "./MyPage/components/SideMenu";
