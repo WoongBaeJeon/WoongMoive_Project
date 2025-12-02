@@ -5,17 +5,16 @@ import { store } from "@store/index.js";
 import { Provider } from "react-redux";
 import { Layout, LoadingSkeleton } from "@components";
 import { SupabaseProvider } from "@supabase_path";
-
 import {
   MovieMain,
   LoginPage,
   SignUpPage,
   AuthCallback,
-} from "@pages/index.js";
-import MyPage from "@pages/MyPage/MyPage";
-import MyInfo from "./pages/MyPage/sections/MyInfo";
-import MyWishlist from "./pages/MyPage/sections/MyWishlist";
-import Support from "./pages/MyPage/sections/Support";
+  MyPage,
+  MyInfo,
+  MyWishlist,
+  Support,
+} from "@pages";
 
 const MovieDetail = lazy(() => import("@pages/MovieDetail.jsx"));
 

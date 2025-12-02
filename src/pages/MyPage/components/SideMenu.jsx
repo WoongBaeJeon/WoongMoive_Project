@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./SideMenu.scss";
 
-export const SideMenu = ({ userInfo }) => {
+export default function SideMenu({ userInfo }) {
   return (
     <aside className="mypage-sidebar">
       <div className="user-section">
@@ -26,4 +26,4 @@ export const SideMenu = ({ userInfo }) => {
       </ul>
     </aside>
   );
-};
+}

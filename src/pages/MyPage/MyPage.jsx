@@ -1,5 +1,5 @@
 import { useAuthGuard } from "@hooks/useAuthGuard";
-import { SideMenu } from "./components/SideMenu";
+import SideMenu from "./components/SideMenu";
 import { Outlet } from "react-router-dom";
 import { useUserInfo } from "@hooks";
 import { LoadingSkeleton } from "@components";
