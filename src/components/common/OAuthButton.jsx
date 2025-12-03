@@ -1,10 +1,10 @@
-import "./OAuthButton.scss";
+import './OAuthButton.scss';
 
 export default function OAuthButton({
   onClick,
   logo,
   children,
-  className = "",
+  className = '',
   label,
 }) {
   if (!logo || !children) {

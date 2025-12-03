@@ -1,5 +1,5 @@
-import { createContext } from "react";
-// // console.log(supabaseClient);
+import { createContext } from 'react';
+
 const SupabaseContext = createContext(null);
 
 export default SupabaseContext;

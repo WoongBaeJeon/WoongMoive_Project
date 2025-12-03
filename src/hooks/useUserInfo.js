@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useSupabaseAuth } from "@supabase_path";
-import { toast } from "react-toastify";
+import { useSupabaseAuth } from '@supabase_path';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const useUserInfo = () => {
   const supabaseAuth = useSupabaseAuth();
@@ -19,8 +19,8 @@ export const useUserInfo = () => {
           });
         }
       } catch (error) {
-        console.log("마이페이지 데이터 가져오기 실패 : ", error);
-        toast.error("마이페이지 데이터를 가져오는데 오류가 발생하였습니다.");
+        console.log('마이페이지 데이터 가져오기 실패 : ', error);
+        toast.error('마이페이지 데이터를 가져오는데 오류가 발생하였습니다.');
       }
     };
 

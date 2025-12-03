@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { useWishListBookMark } from "@hooks";
-import { MovieCard } from "@components";
-import "./MyWishlist.scss";
+import { MovieCard } from '@components';
+import { useWishListBookMark } from '@hooks';
+import { useSelector } from 'react-redux';
+import './MyWishlist.scss';
 
 export default function MyWishlist() {
   const userId = useSelector((state) => state.logIn.userId);
@@ -10,7 +10,7 @@ export default function MyWishlist() {
 
   if (!userId) {
     return (
-      <div className={`section-box ${isDarkMode ? "dark" : "light"}`}>
+      <div className={`section-box ${isDarkMode ? 'dark' : 'light'}`}>
         <h2>위시리스트</h2>
         <p>로그인 후 이용해주세요.</p>
       </div>
@@ -19,7 +19,7 @@ export default function MyWishlist() {
 
   if (loading) {
     return (
-      <div className={`section-box ${isDarkMode ? "dark" : "light"}`}>
+      <div className={`section-box ${isDarkMode ? 'dark' : 'light'}`}>
         <h2>위시리스트</h2>
         <p>불러오는 중...</p>
       </div>
@@ -27,7 +27,7 @@ export default function MyWishlist() {
   }
 
   return (
-    <div className={`section-box ${isDarkMode ? "dark" : "light"}`}>
+    <div className={`section-box ${isDarkMode ? 'dark' : 'light'}`}>
       <h2>위시리스트🎬</h2>
       {bookmarks.length === 0 ? (
         <p>위시리스트가 비어있습니다.</p>

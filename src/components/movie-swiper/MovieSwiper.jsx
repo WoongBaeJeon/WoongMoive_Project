@@ -1,10 +1,7 @@
-// react에서 swiper 사용
-import { Swiper, SwiperSlide } from "swiper/react";
-import { MovieCard } from "@components";
-import "./MovieSwiper.scss";
-
-// 필요한 기능 모듈 불러오기
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { MovieCard } from '@components';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import './MovieSwiper.scss';
 
 export default function MovieSwiper({ movieData }) {
   return (
@@ -16,7 +13,7 @@ export default function MovieSwiper({ movieData }) {
         autoplay={{ delay: 3000 }} // 3초마다 자동 재생
         spaceBetween={20} //사이 공간 거리
         slidesPerView={4} //화면에 나타내는 view 개수
-        style={{ padding: "0 40px" }}
+        style={{ padding: '0 40px' }}
       >
         {movieData?.map((data) => (
           <SwiperSlide key={data.id}>

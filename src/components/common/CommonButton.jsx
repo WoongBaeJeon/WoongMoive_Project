@@ -1,10 +1,10 @@
-import "./CommonButton.scss";
+import './CommonButton.scss';
 
 export default function CommonButton({
   children,
   onClick,
-  type = "button",
-  className = "",
+  type = 'button',
+  className = '',
   disabled = false,
   style = {},
 }) {

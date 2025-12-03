@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { useSupabaseAuth } from "@supabase_path";
-import { useInputValidation } from "@hooks";
+import { useInputValidation } from '@hooks';
+import { useSupabaseAuth } from '@supabase_path';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const useSignUp = () => {
   const [errors, setErrors] = useState({});
@@ -31,7 +31,7 @@ export const useSignUp = () => {
       if (error) throw error;
 
       toast.success(`회원가입 성공!`);
-      navigate("/login");
+      navigate('/login');
     } catch (error) {
       toast.error(`회원가입 실패 : ${error.message}`);
       console.log(error.message);

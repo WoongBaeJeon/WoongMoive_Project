@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
-import { useMovieDetailInfo } from "@hooks";
-import { LoadingSkeleton } from "@components";
-import "./MovieDetail.scss";
-import { useSelector } from "react-redux";
+import { LoadingSkeleton } from '@components';
+import { useMovieDetailInfo } from '@hooks';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import './MovieDetail.scss';
 
 const BASE_URL = import.meta.env.VITE_IMG_BASE_URL;
 
@@ -20,15 +20,15 @@ function MovieDetail() {
 
   return (
     <div
-      className={`movie ${isDarkMode ? "dark" : "light"}`}
+      className={`movie ${isDarkMode ? 'dark' : 'light'}`}
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(15,32,39,0.8), rgba(32,58,67,0.6), rgba(44,83,100,0.8)), 
           url(${BASE_URL}${movieDetailInfo.backdrop_path})
         `,
-        backgroundSize: "cover", // 이미지가 화면 전체를 덮도록
-        backgroundPosition: "center center", // 중앙 기준 배치
-        backgroundRepeat: "no-repeat", // 반복 안함
+        backgroundSize: 'cover', // 이미지가 화면 전체를 덮도록
+        backgroundPosition: 'center center', // 중앙 기준 배치
+        backgroundRepeat: 'no-repeat', // 반복 안함
       }}
     >
       <div className="detail-poster">

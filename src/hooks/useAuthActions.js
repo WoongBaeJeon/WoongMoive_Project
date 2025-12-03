@@ -1,12 +1,12 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { logInState, clearUserInfo } from "@store/slice";
+import { clearUserInfo, logInState } from '@store/slice';
 import {
-  useSupabaseAuth,
   localStorageUtils,
   USER_INFO_KEY,
-} from "@supabase_path";
+  useSupabaseAuth,
+} from '@supabase_path';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const useAuthActions = () => {
   const dispatch = useDispatch();
@@ -14,9 +14,9 @@ export const useAuthActions = () => {
   const supabaseAuth = useSupabaseAuth();
   const { removeItemFromLocalStorage } = localStorageUtils();
 
-  const login = () => navigate("/login");
-  const signup = () => navigate("/signup");
-  const mypage = () => navigate("/mypage");
+  const login = () => navigate('/login');
+  const signup = () => navigate('/signup');
+  const mypage = () => navigate('/mypage');
 
   const logout = async () => {
     try {
@@ -24,11 +24,11 @@ export const useAuthActions = () => {
       dispatch(logInState(false));
       removeItemFromLocalStorage(USER_INFO_KEY.customKey); //로그아웃 시 로컬스토리지 모두 제거
       dispatch(clearUserInfo()); //로그아웃시 userinfo 클리어
-      toast.success("로그아웃 되었습니다.");
-      navigate("/");
+      toast.success('로그아웃 되었습니다.');
+      navigate('/');
     } catch (error) {
-      toast.error("로그아웃 중 오류가 발생하였습니다.");
-      console.error("로그아웃 실패 : ", error);
+      toast.error('로그아웃 중 오류가 발생하였습니다.');
+      console.error('로그아웃 실패 : ', error);
     }
   };
 

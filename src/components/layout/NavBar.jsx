@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { CommonButton } from "@common";
-import { useAuthActions, useSearchHandler, useThemeToggle } from "@hooks";
-import "./NavBar.scss";
-import { useState } from "react";
+import { CommonButton } from '@common';
+import { useAuthActions, useSearchHandler, useThemeToggle } from '@hooks';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import './NavBar.scss';
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -17,12 +17,12 @@ export default function NavBar() {
   const closeDropdown = () => setOpenMenu(false);
 
   const handleLogoClick = () => {
-    navigate("/");
+    navigate('/');
     resetSearch();
   };
 
   return (
-    <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
+    <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
       <h1 className="logo" onClick={handleLogoClick}>
         🎬 웅무비
       </h1>
@@ -40,7 +40,7 @@ export default function NavBar() {
           aria-label="모드 변경"
           onClick={toggleTheme}
         >
-          {isDarkMode ? "🌙" : "☀️"}
+          {isDarkMode ? '🌙' : '☀️'}
         </CommonButton>
         {isLogIn ? (
           <>

@@ -1,10 +1,10 @@
-import { combineReducers, createSlice } from "@reduxjs/toolkit";
-import { USER_INFO_KEY } from "@supabase_path";
+import { combineReducers, createSlice } from '@reduxjs/toolkit';
+import { USER_INFO_KEY } from '@supabase_path';
 
 const searchSlice = createSlice({
-  name: "search",
+  name: 'search',
   initialState: {
-    text: "",
+    text: '',
   },
   reducers: {
     setSearchText: (state, action) => {
@@ -14,7 +14,7 @@ const searchSlice = createSlice({
 });
 
 const themeToggleSlice = createSlice({
-  name: "themeToggle",
+  name: 'themeToggle',
   initialState: {
     isDarkMode: false,
   },
@@ -28,7 +28,7 @@ const savedUser = localStorage.getItem(USER_INFO_KEY.customKey);
 const parsedUser = savedUser ? JSON.parse(savedUser) : null;
 
 const logInSlice = createSlice({
-  name: "logIn",
+  name: 'logIn',
   initialState: {
     // 초기값 설정이 중요함. 새로고침 시 초기값이 고정될 수 있음.
     isLogIn: !!localStorage.getItem(USER_INFO_KEY.customKey), //!!는 Boolean 타입으로 변환
@@ -56,9 +56,9 @@ const logInSlice = createSlice({
     },
     clearUserInfo: (state) => {
       //이름 전역관리 클리어
-      (state.isLogIn = false), //!!는 Boolean 타입으로 변환!!localStorage.getItem(USER_INFO_KEY.customKey)
+      ((state.isLogIn = false), //!!는 Boolean 타입으로 변환!!localStorage.getItem(USER_INFO_KEY.customKey)
         (state.userName = null),
-        (state.userId = null);
+        (state.userId = null));
     },
   },
 });

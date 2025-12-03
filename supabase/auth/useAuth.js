@@ -1,11 +1,10 @@
-// import  from "../utilities/useSupabase";
 import {
   changeFromDto,
   DTO_TYPE,
   localStorageUtils,
   USER_INFO_KEY,
   useSupabase,
-} from "@supabase_path/utilities";
+} from '@supabase_path/utilities';
 
 export const useAuth = () => {
   const supabase = useSupabase();
@@ -47,7 +46,7 @@ export const useAuth = () => {
         }
         return userInfo;
       } catch (error) {
-        console.error("유저 정보 가져오기 실패 : ", error);
+        console.error('유저 정보 가져오기 실패 : ', error);
       }
     }
   };
