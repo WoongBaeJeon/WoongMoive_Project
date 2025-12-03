@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '@constants/api.js';
+import { movieApi } from '@apis';
 import { useEffect, useState } from 'react';
 
 export default function useMovieDetailInfo(movieId) {
@@ -12,13 +12,7 @@ export default function useMovieDetailInfo(movieId) {
       try {
         setLoading(true);
 
-        const endPoint = `${API_URL}/${movieId}?api_key=${API_KEY}&language=ko`;
-        const response = await fetch(endPoint);
-        const jsonData = await response.json();
-
-        if (!jsonData || jsonData.success === false) {
-          throw new Error('영화 데이터를 불러올 수 없습니다.');
-        }
+        const jsonData = await movieApi.getMovieDetail(movieId);
 
         setMovieDetailInfo(jsonData);
       } catch (error) {

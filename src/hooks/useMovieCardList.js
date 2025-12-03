@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '@constants/api.js';
+import { movieApi } from '@apis';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -15,14 +15,7 @@ export default function useMovieCardList() {
       setLoading(true);
       setError(null);
 
-      const endPoint = `${API_URL}/popular?api_key=${API_KEY}&language=ko&page=${pageValue}`;
-      const response = await fetch(endPoint);
-
-      if (!response.ok) {
-        throw new Error(`API 응답 에러: ${response.status}`);
-      }
-
-      const jsonData = await response.json();
+      const jsonData = await movieApi.getPopularMovies(pageValue);
       const data = jsonData.results.filter((movie) => movie.adult === false);
 
       if (typeof jsonData.total_pages === 'number') {
@@ -37,8 +30,19 @@ export default function useMovieCardList() {
         return uniqueMovies;
       });
     } catch (error) {
-      console.error('API 요청 에러 : ', error);
-      setError(error);
+      if (error.response) {
+        // 서버가 2xx 외의 상태 코드 응답
+        console.error('서버 에러:', error.response.status, error.response.data);
+        setError(`서버 에러: ${error.response.status}`);
+      } else if (error.request) {
+        // 요청은 보냈지만 응답을 받지 못함
+        console.error('네트워크 에러:', error.request);
+        setError('네트워크 연결을 확인해주세요');
+      } else {
+        // 요청 설정 중 에러
+        console.error('요청 에러:', error.message);
+        setError('요청 중 오류가 발생했습니다');
+      }
     } finally {
       setLoading(false);
     }

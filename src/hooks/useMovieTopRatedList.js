@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '@constants/api.js';
+import { movieApi } from '@apis';
 import { useEffect, useState } from 'react';
 
 export default function useMovieTopRatedList() {
@@ -7,9 +7,7 @@ export default function useMovieTopRatedList() {
   useEffect(() => {
     const fetchMovieInfo = async () => {
       try {
-        const endPoint = `${API_URL}/top_rated?api_key=${API_KEY}&language=ko&page=1`;
-        const response = await fetch(endPoint);
-        const jsonData = await response.json();
+        const jsonData = await movieApi.getTopRatedMovies();
         const data = jsonData.results.filter((movie) => movie.adult === false);
 
         if (data.length === 0) {

@@ -1,1 +1,1 @@
-export { default as movieApi } from './movie';
+export { default as movieApi } from './movieApi';
