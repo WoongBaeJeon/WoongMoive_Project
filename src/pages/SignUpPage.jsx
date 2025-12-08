@@ -24,7 +24,7 @@ export default function SignUpPage() {
   return (
     <div className="sign-container">
       <h2 className="sign-title">회원가입</h2>
-      <form className="sign-fomr" onSubmit={handleSubmit}>
+      <form className="sign-form" onSubmit={handleSubmit}>
         {inputFields.map((field) => (
           <InputField
             key={field.name}
