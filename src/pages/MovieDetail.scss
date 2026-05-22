@@ -1,3 +1,16 @@
+.movieDetail-page {
+  min-height: calc(100vh - 90px);
+  padding: 40px 0;
+
+  &.dark {
+    background: #222;
+  }
+
+  &.light {
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  }
+}
+
 .movie {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
@@ -7,7 +20,7 @@
   height: 600px;
   background-color: darkcyan;
   padding: 20px;
-  margin: 40px auto;
+  margin: 0 auto;
 
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   border-radius: 16px;
@@ -69,13 +82,5 @@
     grid-column: 2 / 4;
     grid-row: 3;
     line-height: 1.5;
-  }
-
-  &.dark {
-    @include theme-dark;
-  }
-
-  &.light {
-    @include theme-light;
   }
 }
